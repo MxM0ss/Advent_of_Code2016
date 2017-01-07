@@ -24,15 +24,16 @@ while '' in password:
 			pass
 		num += 1
 	else:
-#		if num%100000 == 0:
-#			for x in range(len(password)):
-#					fake[x] = password[x]
-#				else:
-#					fake[x] = hashed.hexdigest()[x]
-#			print(''.join(fake))
-		if num%5000000 == 0:
+		if num%1000 == 0:
+			for x in range(len(password)):
+				if password[x] != '':
+					fake[x] = password[x]
+				else:
+					fake[x] = hashed.hexdigest()[x]
+			print(''.join(fake))
+		if num%1000000 == 0:
 			print(num)
-#			time.sleep(.25)
+			time.sleep(.25)
 		num += 1
 print('finished')
 print(password)
